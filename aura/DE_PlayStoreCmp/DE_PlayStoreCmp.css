@@ -1,0 +1,51 @@
+.THIS.body_component{
+    background:#fafaf9 !important;
+	padding-top:4px;
+    padding-bottom:4px;
+}
+.THIS .review_Title {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+}
+.THIS .review_app_Title {
+    text-align: center;
+    line-height: 70px;
+    border-bottom: 1px solid #ccc;
+}
+.THIS div#bt
+{
+    display: inline-block;
+    float: right;
+    margin-right: 10px;
+}
+.THIS .app_image {
+    display: inline-block;
+}
+
+.THIS .app_name {
+    display: inline-block;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.THIS .app_details {
+    padding: 10px;
+    padding-left: 30px;
+    position:relative;
+}
+.THIS .review{
+    display: inline-block;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top:5px;
+}
+
+.THIS .slds-has-flexi-truncate{
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.THIS .replyBt{
+    margin-top:10px;
+}

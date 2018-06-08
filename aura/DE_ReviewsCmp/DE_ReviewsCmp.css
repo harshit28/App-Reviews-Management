@@ -1,0 +1,49 @@
+.THIS.body_component{
+    background: #fafaf9 !important;
+    padding-top:4px;
+    padding-bottom:4px;
+    
+}
+.THIS .slds-card__footer {
+    padding: 0 1rem .75rem;
+    margin-top: .75rem;
+    text-align: right;
+    font-size: .8125rem;
+    border-top: 1px solid rgb(187, 187, 187);
+    text-align: left;
+    padding-top: 10px;
+}
+.THIS div#bt
+{
+    display: inline-block;
+    float: right;
+    margin-right: 10px;
+}
+
+.THIS .app_image {
+    display: inline-block;
+}
+
+.THIS .app_name {
+    display: inline-block;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.THIS .app_details {
+    padding: 10px;
+    padding-left: 30px;
+    position:relative;
+}
+
+.THIS .review{
+    display: inline-block;
+    font-weight: bold;
+    margin-left: 15px;
+    margin-top:5px;
+}
+
+.THIS .review_Title {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+}

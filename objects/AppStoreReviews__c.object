@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>App_Review_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>AppReview</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>AppReview</fullName>
+        <fields>Name</fields>
+        <fields>Author_Name__c</fields>
+        <fields>Title__c</fields>
+        <fields>Source__c</fields>
+        <fields>App__c</fields>
+        <fields>Sentiment__c</fields>
+        <fields>Intent__c</fields>
+        <label>AppReview</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>App_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>App ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>App_Image__c</fullName>
+        <externalId>false</externalId>
+        <label>App Image</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>App_Package_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>App Package Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>App__c</fullName>
+        <externalId>false</externalId>
+        <label>App</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Author_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Author Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Customer Service Case related to this review</inlineHelpText>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipName>AppStoreReviews</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Content__c</fullName>
+        <externalId>false</externalId>
+        <label>Content</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Country_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Country Code</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Time_Retrieved__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Date/Time Retrieved</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Developer_Comment__c</fullName>
+        <externalId>false</externalId>
+        <label>Developer Comment</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Image_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Image Id</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Intent__c</fullName>
+        <externalId>false</externalId>
+        <label>Intent</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Page__c</fullName>
+        <externalId>false</externalId>
+        <label>Page</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rating_Stars__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( Rating__c , 
+&quot;1&quot;,  IMAGE(&quot;/servlet/servlet.FileDownload?file=0151I000000xtn8&quot;,&quot;One&quot;),
+&quot;2&quot;,  IMAGE(&quot;/servlet/servlet.FileDownload?file=0151I000000fnvq&quot;,&quot;Two&quot;),
+&quot;3&quot;,  IMAGE(&quot;/servlet/servlet.FileDownload?file=0151I000000xtn9&quot;,&quot;Three&quot;),
+&quot;4&quot;,  IMAGE(&quot;/servlet/servlet.FileDownload?file=0151I000000fnvv&quot;,&quot;Four&quot;),
+&quot;5&quot;,  IMAGE(&quot;/servlet/servlet.FileDownload?file=0151I000000xtnA&quot;,&quot;Five&quot;), 
+IMAGE(&quot;/servlet/servlet.FileDownload?file=0151I000000xtn8&quot;,&quot;None&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Rating (Stars)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rating__c</fullName>
+        <externalId>false</externalId>
+        <label>Rating</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rating_num__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE( Rating__c , &quot;1&quot;, 1, &quot;2&quot;, 2, &quot;3&quot;, 3, &quot;4&quot;, 4, &quot;5&quot;, 5,0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Rating (Numeric)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Review_ID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>false</externalId>
+        <label>Review ID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Sentiment__c</fullName>
+        <externalId>false</externalId>
+        <label>Sentiment</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Source</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Apple App Store</fullName>
+                    <default>false</default>
+                    <label>Apple App Store</label>
+                </value>
+                <value>
+                    <fullName>Google Play Store</fullName>
+                    <default>false</default>
+                    <label>Google Play Store</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>App Reviews</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Author_Name__c</columns>
+        <columns>Rating_Stars__c</columns>
+        <columns>Date_Time_Retrieved__c</columns>
+        <columns>App__c</columns>
+        <columns>Page__c</columns>
+        <columns>Source__c</columns>
+        <columns>Title__c</columns>
+        <columns>Content__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Apple_App_Store_Reviews</fullName>
+        <columns>NAME</columns>
+        <columns>App__c</columns>
+        <columns>Title__c</columns>
+        <columns>Sentiment__c</columns>
+        <columns>Intent__c</columns>
+        <columns>Date_Time_Retrieved__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Source__c</field>
+            <operation>equals</operation>
+            <value>Apple App Store</value>
+        </filters>
+        <label>Apple App Store Reviews</label>
+    </listViews>
+    <nameField>
+        <displayFormat>A-{00000}</displayFormat>
+        <label>AppStoreReviews Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>App Reviews</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Date_Time_Retrieved__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Title__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Author_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Rating__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Date_Time_Retrieved__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Title__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Author_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Rating__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Date_Time_Retrieved__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Title__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Author_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Rating__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Date_Time_Retrieved__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Title__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Author_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Rating__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Find_Intent</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Find Intent</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/39.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/39.0/apex.js&quot;)} 
+
+var resp = sforce.apex.execute( 
+&quot;EinsteinServices&quot;, 
+&quot;predictIntent&quot;, 
+{ 
+&quot;textToPredict&quot; : &quot;{!AppStoreReviews__c.Content__c}&quot; 
+} 
+); 
+
+window[ resp[0].probabilities[0].label ] = resp[0].probabilities[0].probability; 
+window[ resp[0].probabilities[1].label ] = resp[0].probabilities[1].probability; 
+window[ resp[0].probabilities[2].label ] = resp[0].probabilities[2].probability; 
+
+alert(resp[0].probabilities[0].label);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Find_Sentiment</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Find Sentiment</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/39.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/39.0/apex.js&quot;)} 
+
+var resp = sforce.apex.execute( 
+    &quot;EinsteinServices&quot;, 
+    &quot;findSentiment&quot;, 
+    { 
+        &quot;text&quot; : &quot;{!AppStoreReviews__c.Content__c}&quot; 
+    } 
+); 
+
+window[ resp[0].probabilities[0].label ] = resp[0].probabilities[0].probability; 
+window[ resp[0].probabilities[1].label ] = resp[0].probabilities[1].probability; 
+window[ resp[0].probabilities[2].label ] = resp[0].probabilities[2].probability; 
+
+var result = &quot;&quot;; 
+if( negative &gt; positive &amp;&amp; negative &gt; neutral ) { 
+    result = &quot;Negative&quot;; 
+} 
+else if( positive &gt; negative &amp;&amp; positive &gt; neutral ) { 
+    result = &quot;Positive&quot;; 
+} 
+else { 
+    result = &quot;Neutral&quot;; 
+} 
+
+alert( result );</url>
+    </webLinks>
+</CustomObject>

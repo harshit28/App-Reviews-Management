@@ -1,0 +1,3 @@
+<design:component label="Google Play Store Reviews">
+    <design:attribute name="pckgName" label="Enter your Google App Package Name" required="true"/>
+</design:component>

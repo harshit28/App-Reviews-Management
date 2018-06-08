@@ -1,0 +1,4 @@
+<design:component label="Apple App Store Reviews">
+    <design:attribute name="appID" label="Enter the App ID" required="true"/>
+    <design:attribute name="countryCode" label="Enter the Country Code" description="The country code of the app in the format of:'us' if 'USA', 'pt' if 'Portugal', 'in' if 'India'" />
+</design:component>

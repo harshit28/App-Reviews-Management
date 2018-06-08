@@ -1,0 +1,172 @@
+<apex:page controller="DE_GoogleAccountAuthorizeCtrl" showHeader="true" sidebar="false">
+    <apex:stylesheet value="{!URLFOR($Resource.SLDSAP, 'SLDSAP/assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
+	<apex:slds />
+    
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <script>
+        window.onload = function(){
+        	fetchAccessTokenAction();
+        }
+        function displayMessage(isRedirectVal){
+            if(!isRedirectVal){
+                document.getElementById('containerId').style.display = 'block';
+                document.getElementById('containerId1').style.display = 'none';
+                document.getElementById('containerIdSucc').style.display = 'none';
+                document.getElementById('containerIdSucc1').style.display = 'none';
+            }else{
+            	document.getElementById('containerIdSucc').style.display = 'block';
+                document.getElementById('containerId').style.display = 'none';
+                document.getElementById('containerId1').style.display = 'none';
+                document.getElementById('containerIdSucc1').style.display = 'none';
+            }
+            
+        }
+        function displayMessageLoad(isRedirectVal){
+            if(isRedirectVal){
+                document.getElementById('containerIdSucc').style.display = 'block';
+                document.getElementById('containerId').style.display = 'none';
+                document.getElementById('containerId1').style.display = 'none';
+                document.getElementById('containerIdSucc1').style.display = 'none';
+            }
+        }
+        function displayMessage1(isRedirectVal){
+            if(!isRedirectVal){
+                document.getElementById('containerId1').style.display = 'block';
+                document.getElementById('containerId').style.display = 'none';
+                document.getElementById('containerIdSucc').style.display = 'none';
+                document.getElementById('containerIdSucc1').style.display = 'none';
+            }else{
+            	document.getElementById('containerIdSucc1').style.display = 'block';
+                document.getElementById('containerId').style.display = 'none';
+                document.getElementById('containerId1').style.display = 'none';
+                document.getElementById('containerIdSucc').style.display = 'none';
+            }
+        }
+        
+    </script>
+    <div class="SLDSAP">
+        <apex:actionstatus id="spinnerStatus">
+            <apex:facet name="start">
+            <div class="slds-spinner_container">
+                <div class="slds-spinner--brand slds-spinner slds-spinner--large" role="alert">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+            </apex:facet>
+        </apex:actionstatus>
+        <div class="slds-m-around--medium">
+        <apex:form >
+            <apex:actionFunction name="fetchAccessTokenAction" action="{!fetchAccessToken}" status="spinnerStatus" rerender="dummy" oncomplete="displayMessageLoad({!isRedirect});"/>
+            <div class="slds-notify_container" id="containerId" style="display:none;">
+                <div class="slds-notify slds-notify--toast slds-theme--error" role="alert">
+                    <span class="slds-assistive-text">Error</span>
+                    <button class="slds-button slds-notify__close slds-button--icon-inverse" title="Close" onclick="document.getElementById('containerId').style.display = 'none'; return false;">
+                        <svg aria-hidden="true" class="slds-button__icon slds-button__icon--large">
+                            <use xlink:href="{!URLFOR($Resource.SLDSAP, '/SLDSAP/assets/icons/utility-sprite/svg/symbols.svg#close')}" />
+                        </svg>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <div class="slds-notify__content slds-grid">
+                        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex">
+                            <use xlink:href="{!URLFOR($Resource.SLDSAP, '/SLDSAP/assets/icons/utility-sprite/svg/symbols.svg#warning')}" />
+                        </svg>
+                        <div class="slds-col slds-align-middle">
+                            <h2 class="slds-text-heading--small">Please enter client id and secret.</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-notify_container" id="containerIdSucc" style="display:none;">
+                <div class="slds-notify slds-notify--toast slds-theme--success" role="alert">
+                    <span class="slds-assistive-text">Success</span>
+                    <button class="slds-button slds-notify__close slds-button--icon-inverse" title="Close" onclick="document.getElementById('containerIdSucc').style.display = 'none'; return false;">
+                        <svg aria-hidden="true" class="slds-button__icon slds-button__icon--large">
+                            <use xlink:href="{!URLFOR($Resource.SLDSAP, '/SLDSAP/assets/icons/utility-sprite/svg/symbols.svg#close')}" />
+                        </svg>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <div class="slds-notify__content slds-grid">
+                        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex">
+                            <use xlink:href="{!URLFOR($Resource.SLDSAP, '/SLDSAP/assets/icons/utility-sprite/svg/symbols.svg#notification')}" />
+                        </svg>
+                        <div class="slds-col slds-align-middle">
+                            <h2 class="slds-text-heading--small ">Authorized your client id and secret successfully.</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slds-notify_container" id="containerId1" style="display:none;">
+                <div class="slds-notify slds-notify--toast slds-theme--error" role="alert">
+                    <span class="slds-assistive-text">Error</span>
+                    <button class="slds-button slds-notify__close slds-button--icon-inverse" title="Close" onclick="document.getElementById('containerId1').style.display = 'none'; return false;">
+                        <svg class="slds-button__icon slds-button__icon--large">
+                            <use xlink:href="{!URLFOR($Resource.SLDSAP, '/SLDSAP/assets/icons/utility-sprite/svg/symbols.svg#close')}" />
+                        </svg>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <div class="slds-notify__content slds-grid">
+                        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex">
+                            <use xlink:href="{!URLFOR($Resource.SLDSAP, '/SLDSAP/assets/icons/utility-sprite/svg/symbols.svg#warning')}" />
+                        </svg>
+                        <div class="slds-col slds-align-middle">
+                            <h2 class="slds-text-heading--small">Please authorize the google account.</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-notify_container" id="containerIdSucc1" style="display:none;">
+                <div class="slds-notify slds-notify--toast slds-theme--success" role="alert">
+                    <span class="slds-assistive-text">Success</span>
+                    <button class="slds-button slds-notify__close slds-button--icon-inverse" title="Close" onclick="document.getElementById('containerIdSucc1').style.display = 'none'; return false;">
+                        <svg aria-hidden="true" class="slds-button__icon slds-button__icon--large">
+                            <use xlink:href="{!URLFOR($Resource.SLDSAP, '/SLDSAP/assets/icons/utility-sprite/svg/symbols.svg#close')}" />
+                        </svg>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <div class="slds-notify__content slds-grid">
+                        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex">
+                            <use xlink:href="{!URLFOR($Resource.SLDSAP, '/SLDSAP/assets/icons/utility-sprite/svg/symbols.svg#notification')}" />
+                        </svg>
+                        <div class="slds-col slds-align-middle">
+                            <h2 class="slds-text-heading--small ">Access token refreshed successfully.</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slds-form" >
+                <div class="slds-form-element slds-m-around--medium">
+                    <label class="slds-form-element__label" for="clientId">Google Account Client Id</label>
+                    <div class="slds-form-element__control">
+                        <apex:inputText id="clientId" styleClass="slds-input" value="{!clientid}"/>
+                    </div>
+                </div>
+                <div class="slds-form-element slds-m-around--medium">
+                    <label class="slds-form-element__label" for="clientSecret">Google Account Client Secret</label>
+                    <div class="slds-form-element__control">
+                        <apex:inputText id="clientSecret" styleClass="slds-input" value="{!clientsecret}"/>
+                    </div>
+                </div>
+                
+                <div class="slds-form-element slds-m-around--medium">
+                    <label class="slds-form-element__label" for="authorizeBtnId">Use this action to connect to your google account.</label>
+                	<div class="slds-form-element__control">
+                        <apex:commandButton id="authorizeBtnId" action="{!authorizeEndpoint}" status="spinnerStatus" value="Connect with Google Account" rerender="dummy" styleclass="slds-button slds-button--brand" oncomplete="displayMessage({!isRedirect});"/>
+                    </div>
+                </div>
+                
+                <div class="slds-form-element slds-m-around--medium">
+                    <label class="slds-form-element__label" for="refreshTokenBtnId">Use this action to get a new access token with which the comment is posted.</label>
+                	<div class="slds-form-element__control">
+                        <apex:commandButton id="refreshTokenBtnId" action="{!refreshAccessToken}" status="spinnerStatus" value="Refresh Access Token" rerender="dummy" styleclass="slds-button slds-button--brand" oncomplete="displayMessage1({!isRedirect});"/>
+                    </div>
+                </div>
+            </div>
+        </apex:form>
+        </div>
+    </div>
+    </html>
+</apex:page>
